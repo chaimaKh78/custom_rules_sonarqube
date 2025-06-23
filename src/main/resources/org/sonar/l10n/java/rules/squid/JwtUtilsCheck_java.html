@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JWT Validation Check Rule</title>
+</head>
+<body>
+    <h1>JWT Validation Check Rule</h1>
+    <p>This rule ensures that the <code>JwtUtils</code> class follows secure practices for validating JWT tokens.</p>
+    <h2>Why is this important?</h2>
+    <p>Proper handling of JWT tokens is crucial for application security. Using insecure keys or failing to log exceptions can lead to vulnerabilities in your application.</p>
+    <h2>Criteria for Security</h2>
+    <ul>
+        <li><code>JwtUtils</code> must use a secure signing key for JWT validation.</li>
+        <li>Exceptions during JWT validation should be properly logged.</li>
+    </ul>
+    <h2>How to fix issues raised by this rule</h2>
+    <ul>
+        <li>Ensure that a secure key is used for signing JWT tokens, such as by utilizing <code>Keys.hmacShaKeyFor</code>.</li>
+        <li>Log exceptions appropriately during the validation process using a logging framework.</li>
+    </ul>
+    <h2>Examples</h2>
+    <p>Here are examples demonstrating proper JWT validation:</p>
+    <pre>
+    // Bad Example: Missing secure key and logging
+    public void validateJwtToken(String token) {
+        // Token validation logic
+        if (someCondition) {
+            // Handle invalid token
+        }
+    }
+
+    // Good Example: Using secure key and logging exceptions
+    public void validateJwtToken(String token) {
+        try {
+            // Secure key usage
+            Keys.hmacShaKeyFor(someSecureKey);
+            // Token validation logic
+        } catch (Exception e) {
+            logger.error("JWT validation failed: ", e);
+        }
+    }
+    </pre>
+</body>
+</html>

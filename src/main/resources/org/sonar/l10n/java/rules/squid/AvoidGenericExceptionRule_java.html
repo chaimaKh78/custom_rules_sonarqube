@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Avoid Generic Exception Types</title>
+</head>
+<body>
+  <h1>Avoid Generic Exception Types</h1>
+  <p>
+    This rule aims to prevent the use of generic exception types like <code>java.lang.Exception</code> and <code>java.lang.Throwable</code>. 
+    Using these broad exceptions reduces the specificity of error handling, which can make debugging more difficult and error-prone.
+  </p>
+
+  <h2>Why this rule matters</h2>
+  <p>
+    More specific exceptions provide greater clarity regarding the nature of the problem, allowing developers to write more targeted 
+    error-handling logic. Using <code>Exception</code> or <code>Throwable</code> as a catch-all makes it harder to understand the actual 
+    issues that need to be addressed.
+  </p>
+
+  <h2>Compliant Code Example</h2>
+  <pre>
+<code>
+try {
+    // some code that might throw an IOException
+} catch (IOException e) {
+    // Handle IOException specifically
+    log.error("Failed to process file", e);
+}
+</code>
+  </pre>
+
+  <h2>Non-Compliant Code Example</h2>
+  <pre>
+<code>
+try {
+    // some code that might throw an exception
+} catch (Exception e) {
+    // Catching the generic Exception type
+    log.error("An error occurred", e);
+}
+</code>
+  </pre>
+
+  <h2>Additional Considerations</h2>
+  <ul>
+    <li>Avoid swallowing exceptions without logging or handling them.</li>
+    <li>Be cautious of broad exception handling as it may mask other issues.</li>
+    <li>If exceptions are rethrown, ensure they are properly documented or wrapped in custom exceptions.</li>
+  </ul>
+</body>
+</html>

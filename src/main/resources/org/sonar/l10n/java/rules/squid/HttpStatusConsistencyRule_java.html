@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP Status Consistency</title>
+</head>
+<body>
+    <h1>HTTP Status Consistency</h1>
+    <p>This rule ensures that HTTP status codes are used consistently based on the context of the response and the HTTP method used.</p>
+    <h2>Why is this important?</h2>
+    <p>Inconsistent use of HTTP status codes can lead to confusion for clients consuming your API and can violate the principles of REST. This rule helps maintain clarity in your API responses by ensuring that success and error status codes are used appropriately based on the context.</p>
+    <h2>How to fix issues raised by this rule</h2>
+    <ul>
+        <li>Ensure that success status codes (e.g., <code>200 OK</code>, <code>201 CREATED</code>) are used only in appropriate success contexts.</li>
+        <li>Ensure that error status codes (e.g., <code>400 BAD REQUEST</code>, <code>404 NOT FOUND</code>) are used when an error occurs.</li>
+        <li>Avoid using both success and error status codes in different return paths within the same method.</li>
+        <li>When throwing exceptions, ensure that appropriate error HTTP status codes are returned.</li>
+    </ul>
+    <h2>Examples</h2>
+    <p>Examples demonstrating proper HTTP status usage in various contexts.</p>
+</body>
+</html>

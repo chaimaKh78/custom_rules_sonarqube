@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Validation and Closure</title>
+</head>
+<body>
+    <h1>File Validation and Closure</h1>
+    <p>This rule ensures that files are validated before they are processed and closed afterward.</p>
+    <h2>Why is this important?</h2>
+    <p>In large file management applications, failing to validate and close files properly can lead to resource leaks and system errors. The "File Validation and Closure" rule acts as a safeguard, ensuring that every file is validated before processing and closed afterward. This helps prevent memory leaks and unexpected errors, thereby ensuring the stability of the system.</p>
+    <h2>How to fix issues raised by this rule</h2>
+    <ul>
+        <li>Ensure that the file is validated using the <code>isValidFile</code> method before any processing.</li>
+        <li>Ensure that the file is closed using the <code>close</code> method after processing.</li>
+        <li>If using a try-with-resources statement, ensure that the file is declared as a resource.</li>
+    </ul>
+    <h2>Examples</h2>
+    <p>Examples demonstrating proper file validation and closure practices.</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload Security Validation</title>
+</head>
+<body>
+  <h1>File Upload Security Validation</h1>
+  <p>
+    This rule ensures that uploaded files are properly validated for their type, size, and content, and that they are scanned for malware 
+    before being saved. It promotes secure handling of file uploads to prevent potential vulnerabilities.
+  </p>
+
+  <h2>Why this rule matters</h2>
+  <p>
+    File uploads can pose significant security risks if not handled correctly. Validating uploaded files helps mitigate risks 
+    such as malicious file uploads, and scanning for malware ensures that harmful files are not processed by the application.
+  </p>
+
+  <h2>Compliant Code Example</h2>
+  <pre>
+<code>
+public void uploadFile(File file) {
+    if (isValidExcelFile(file) && validateFileSize(file)) {
+        // Scanning for malware before saving
+        scanForMalware(file);
+        save(file);
+    }
+}
+</code>
+  </pre>
+
+  <h2>Non-Compliant Code Example</h2>
+  <pre>
+<code>
+public void uploadFile(File file) {
+    // No validation or scanning performed before saving
+    save(file);
+}
+</code>
+  </pre>
+
+  <h2>Additional Considerations</h2>
+  <ul>
+    <li>Always validate file uploads to ensure they meet your application's requirements.</li>
+    <li>Consider using a library or service for malware scanning to ensure comprehensive protection.</li>
+    <li>Log validation failures to monitor and respond to potential security threats.</li>
+  </ul>
+</body>
+</html>

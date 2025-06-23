@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Validation Rule</title>
+</head>
+<body>
+    <h1>Input Validation Rule</h1>
+    <p>This rule ensures that input parameters in your methods are validated using <code>@Valid</code> or equivalent validation annotations.</p>
+    <h2>Why is this important?</h2>
+    <p>Proper input validation is crucial for application security. Failing to validate input can lead to various security vulnerabilities, including injection attacks and data corruption.</p>
+    <h2>How to fix issues raised by this rule</h2>
+    <ul>
+        <li>Annotate your input parameters with <code>@Valid</code> or similar annotations to ensure they are validated before processing.</li>
+        <li>Use appropriate validation frameworks to enforce constraints on the input data.</li>
+    </ul>
+    <h2>Examples</h2>
+    <p>Here are examples demonstrating proper input validation:</p>
+    <pre>
+    // Bad Example: Missing validation
+    @GetMapping("/user")
+    public User getUser(@RequestParam String id) {
+        // User not validated
+        return userService.findById(id);
+    }
+
+    // Good Example: Using @Valid for validation
+    @PostMapping("/user")
+    public User createUser(@RequestBody @Valid User user) {
+        return userService.save(user);
+    }
+    </pre>
+</body>
+</html>

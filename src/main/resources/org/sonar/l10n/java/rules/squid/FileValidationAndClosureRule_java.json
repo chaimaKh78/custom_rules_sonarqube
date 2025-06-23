@@ -1,0 +1,22 @@
+{
+    "key": "FileValidationAndClosure",
+    "name": "File Validation and Closure",
+    "description": "Ensures that files are validated before processing and closed afterward.",
+    "status": "READY",
+    "lang": "java",
+    "type": "CODE_SMELL",
+    "severity": "MAJOR",
+    "isDeprecated": false,
+    "isExternal": false,
+    "category": "Code Smell",
+    "tags": ["file", "validation", "resource management"],
+    "defaultSeverity": "MAJOR",
+    "remediationFunc": "constant_1h",
+    "remediation": {
+      "description": "Fixing this issue will take approximately 1 hour.",
+      "cost": 1
+    },
+    "params": [],
+    "ruleClass": "rules.FileValidationAndClosureRule"
+  }
+  

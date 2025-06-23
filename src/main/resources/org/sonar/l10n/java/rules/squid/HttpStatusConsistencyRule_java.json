@@ -1,0 +1,22 @@
+{
+    "key": "HttpStatusConsistency",
+    "name": "HTTP Status Consistency",
+    "description": "Ensures that HTTP status codes are used consistently based on the context of the response and the HTTP method used.",
+    "status": "READY",
+    "lang": "java",
+    "type": "CODE_SMELL",
+    "severity": "MAJOR",
+    "isDeprecated": false,
+    "isExternal": false,
+    "category": "Code Smell",
+    "tags": ["http", "status", "consistency"],
+    "defaultSeverity": "MAJOR",
+    "remediationFunc": "constant_1h",
+    "remediation": {
+      "description": "Fixing this issue will take approximately 1 hour.",
+      "cost": 1
+    },
+    "params": [],
+    "ruleClass": "rules.HttpStatusConsistencyRule"
+  }
+  

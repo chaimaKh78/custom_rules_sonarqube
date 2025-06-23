@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Authentication Entry Point Check</title>
+</head>
+<body>
+    <h1>Secure Authentication Entry Point Check</h1>
+    <p>This rule verifies that the <code>AuthenticationEntryPoint</code> implementation properly handles unauthorized access.</p>
+    <h2>Why is this important?</h2>
+    <p>Unauthorized access attempts should be handled consistently and securely, ensuring that the correct HTTP status code is returned and that errors are logged appropriately.</p>
+    <h2>Criteria for Security</h2>
+    <ul>
+        <li>The <code>sendError</code> method must use HTTP status code <code>401</code> for unauthorized errors.</li>
+        <li>Exceptions occurring during this process should be logged using a logging framework.</li>
+    </ul>
+    <h2>How to fix issues raised by this rule</h2>
+    <ul>
+        <li>Ensure that unauthorized access is handled by returning the <code>HttpServletResponse.SC_UNAUTHORIZED</code> status.</li>
+        <li>Check that exceptions are logged using a logger, especially in the context of security events.</li>
+    </ul>
+    <h2>Examples</h2>
+    <p>Here are examples demonstrating the appropriate and inappropriate usage of the commence method:</p>
+    <pre>
+    // Bad Example: Not using HTTP status 401
+    response.sendError(403); // Forbidden
+
+    // Bad Example: Not logging exceptions
+    response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+
+    // Good Example: Properly handling unauthorized access with logging
+    response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+    logger.error("Unauthorized access attempt detected.");
+    </pre>
+</body>
+</html>

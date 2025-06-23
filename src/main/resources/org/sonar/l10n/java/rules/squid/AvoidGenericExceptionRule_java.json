@@ -1,0 +1,25 @@
+[
+    {
+      "key": "AvoidGenericExceptionRule",
+      "name": "Avoid Generic Exception Types",
+      "severity": "MAJOR",
+      "tags": [
+        "bug",
+        "convention"
+      ],
+      "status": "READY",
+      "description": "Avoid using generic exception types like 'Exception' or 'Throwable'. Prefer more specific exceptions for better error handling.",
+      "type": "BUG",
+      "remediation": {
+        "func": "Constant\/Issue",
+        "constantCost": "15min"
+      },
+      "defaultSeverity": "MAJOR",
+      "scope": "Main",
+      "sysTags": [
+        "convention",
+        "error-handling"
+      ]
+    }
+  ]
+  

@@ -1,0 +1,22 @@
+{
+    "key": "JwtUtilsCheck",
+    "name": "JWT Validation Check",
+    "description": "This rule checks if the JwtUtils class uses secure practices for JWT validation and exception handling.",
+    "status": "READY",
+    "lang": "java",
+    "type": "CODE_SMELL",
+    "severity": "MAJOR",
+    "isDeprecated": false,
+    "isExternal": false,
+    "category": "Security",
+    "tags": ["security", "jwt"],
+    "defaultSeverity": "MAJOR",
+    "remediationFunc": "constant_1h",
+    "remediation": {
+      "description": "Fixing this issue will take approximately 1 hour.",
+      "cost": 1
+    },
+    "params": [],
+    "ruleClass": "rules.JwtUtilsCheck"
+  }
+  

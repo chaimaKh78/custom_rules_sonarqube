@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inefficient Database Calls</title>
+</head>
+<body>
+    <h1>Inefficient Database Calls</h1>
+    <p>This rule aims to prevent inefficient database operations by avoiding saving entities inside loops.</p>
+    <h2>Why is this important?</h2>
+    <p>Executing save operations inside loops can lead to significant performance issues, as each operation may result in a separate database transaction. Using batch updates instead can drastically improve performance.</p>
+    <h2>How to fix issues raised by this rule</h2>
+    <ul>
+        <li>Refactor your code to accumulate entities and save them in a single batch operation after the loop.</li>
+        <li>Consider using methods such as <code>saveAll</code> instead of individual <code>save</code> calls within loops.</li>
+    </ul>
+    <h2>Examples</h2>
+    <p>Here are examples demonstrating how to avoid inefficient database calls:</p>
+    <pre>
+    // Bad Example: Saving inside a loop
+    for (Entity entity : entities) {
+        repository.save(entity); // Inefficient
+    }
+
+    // Good Example: Using saveAll
+    repository.saveAll(entities); // Efficient
+    </pre>
+</body>
+</html>

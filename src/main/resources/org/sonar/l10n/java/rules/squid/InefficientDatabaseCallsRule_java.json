@@ -1,0 +1,22 @@
+{
+    "key": "InefficientDatabaseCallsRule",
+    "name": "Inefficient Database Calls",
+    "description": "Avoid saving entities inside loops. Use batch updates to improve performance.",
+    "status": "READY",
+    "lang": "java",
+    "type": "CODE_SMELL",
+    "severity": "MAJOR",
+    "isDeprecated": false,
+    "isExternal": false,
+    "category": "Code Smell",
+    "tags": ["database", "performance", "efficiency"],
+    "defaultSeverity": "MAJOR",
+    "remediationFunc": "constant_1h",
+    "remediation": {
+      "description": "Fixing this issue will take approximately 1 hour.",
+      "cost": 1
+    },
+    "params": [],
+    "ruleClass": "rules.InefficientDatabaseCallsRule"
+  }
+  

@@ -1,0 +1,25 @@
+[
+    {
+      "key": "FileUploadSecurityRule",
+      "name": "File Upload Security Validation",
+      "severity": "CRITICAL",
+      "tags": [
+        "security",
+        "bug"
+      ],
+      "status": "READY",
+      "description": "Ensure that uploaded files are validated (type, size, content) and scanned for malware before saving.",
+      "type": "BUG",
+      "remediation": {
+        "func": "Constant\/Issue",
+        "constantCost": "15min"
+      },
+      "defaultSeverity": "CRITICAL",
+      "scope": "Main",
+      "sysTags": [
+        "security",
+        "file-upload"
+      ]
+    }
+  ]
+  

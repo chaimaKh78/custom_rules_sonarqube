@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exception Handling in Methods</title>
+</head>
+<body>
+  <h1>Exception Handling in Methods</h1>
+  <p>
+    This rule enforces that methods declaring exceptions in their <code>throws</code> clause must handle those exceptions using a 
+    <code>try-catch</code> block or delegate exception handling to a centralized mechanism using <code>@ControllerAdvice</code>.
+  </p>
+
+  <h2>Why this rule matters</h2>
+  <p>
+    Proper exception handling is crucial for maintaining robust and maintainable code. Failing to handle exceptions can lead to 
+    unexpected behaviors and application crashes. This rule encourages developers to be explicit about how exceptions are managed.
+  </p>
+
+  <h2>Compliant Code Example</h2>
+  <pre>
+<code>
+public void myMethod() throws IOException {
+    try {
+        // Code that may throw IOException
+    } catch (IOException e) {
+        // Handle IOException specifically
+        log.error("IO error occurred", e);
+    }
+}
+</code>
+  </pre>
+
+  <h2>Non-Compliant Code Example</h2>
+  <pre>
+<code>
+public void myMethod() throws IOException {
+    // No try-catch for IOException
+    // This method does not handle declared exceptions
+}
+</code>
+  </pre>
+
+  <h2>Additional Considerations</h2>
+  <ul>
+    <li>Use <code>@ControllerAdvice</code> to handle exceptions globally in Spring applications.</li>
+    <li>Consider the impact of unhandled exceptions on application stability and user experience.</li>
+    <li>Document exception handling strategies clearly to enhance code readability.</li>
+  </ul>
+</body>
+</html>

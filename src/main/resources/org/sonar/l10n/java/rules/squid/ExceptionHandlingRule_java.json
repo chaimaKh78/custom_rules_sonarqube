@@ -1,0 +1,25 @@
+[
+    {
+      "key": "ExceptionHandlingRule",
+      "name": "Exception Handling in Methods",
+      "severity": "MAJOR",
+      "tags": [
+        "bug",
+        "convention"
+      ],
+      "status": "READY",
+      "description": "Methods that declare exceptions in their throws clause must either handle those exceptions with a try-catch block or use @ControllerAdvice for centralized exception handling.",
+      "type": "BUG",
+      "remediation": {
+        "func": "Constant\/Issue",
+        "constantCost": "10min"
+      },
+      "defaultSeverity": "MAJOR",
+      "scope": "Main",
+      "sysTags": [
+        "convention",
+        "error-handling"
+      ]
+    }
+  ]
+  

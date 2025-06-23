@@ -1,0 +1,22 @@
+{
+    "key": "SecureAuthEntryPointCheck",
+    "name": "Secure Authentication Entry Point Check",
+    "description": "This rule ensures that the AuthenticationEntryPoint's commence method handles unauthorized access correctly by using HTTP status 401 and logging errors.",
+    "status": "READY",
+    "lang": "java",
+    "type": "CODE_SMELL",
+    "severity": "MAJOR",
+    "isDeprecated": false,
+    "isExternal": false,
+    "category": "Security",
+    "tags": ["security", "authentication"],
+    "defaultSeverity": "MAJOR",
+    "remediationFunc": "constant_1h",
+    "remediation": {
+      "description": "Fixing this issue will take approximately 1 hour.",
+      "cost": 1
+    },
+    "params": [],
+    "ruleClass": "rules.SecureAuthEntryPointCheck"
+  }
+  

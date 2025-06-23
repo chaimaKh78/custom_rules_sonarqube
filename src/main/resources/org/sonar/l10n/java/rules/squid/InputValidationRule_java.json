@@ -1,0 +1,22 @@
+{
+    "key": "InputValidationRule",
+    "name": "Input Validation",
+    "description": "Input parameters must be validated with @Valid or equivalent validation annotations.",
+    "status": "READY",
+    "lang": "java",
+    "type": "CODE_SMELL",
+    "severity": "MAJOR",
+    "isDeprecated": false,
+    "isExternal": false,
+    "category": "Code Smell",
+    "tags": ["security", "validation"],
+    "defaultSeverity": "MAJOR",
+    "remediationFunc": "constant_1h",
+    "remediation": {
+      "description": "Fixing this issue will take approximately 1 hour.",
+      "cost": 1
+    },
+    "params": [],
+    "ruleClass": "rules.InputValidationRule"
+  }
+  
